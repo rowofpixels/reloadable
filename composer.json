@@ -1,6 +1,8 @@
 {
     "name": "rowofpixels/reloadable",
     "description": "Simple way to reload eloquent models",
+    "keywords": ["eloquent"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Matthew Steiner",
