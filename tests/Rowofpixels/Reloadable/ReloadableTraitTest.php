@@ -10,6 +10,14 @@ class ReloadableModel extends Eloquent
     protected $fillable = array('title');
 }
 
+class ReloadableModelWithAlternativePrimaryKey extends Eloquent
+{
+    use ReloadableTrait;
+
+    protected $primaryKey = 'alternative_id';
+    protected $fillable = array('title');
+}
+
 class ReloadableTraitTest extends TestCase
 {
     public function testReloadableModelCanBeInstantiated()
@@ -45,5 +53,17 @@ class ReloadableTraitTest extends TestCase
         $modelB->save();
 
         $this->assertEquals('New Title', $modelA->reload()->title);
+    }
+
+    public function testReloadableModelWorksWithAlternativePrimaryKey()
+    {
+        $modelA = ReloadableModelWithAlternativePrimaryKey::create(array('title' => 'Original Title'));
+        $modelB = ReloadableModelWithAlternativePrimaryKey::first();
+        $modelB->title = 'New Title';
+        $modelB->save();
+
+        $modelA->reload();
+
+        $this->assertEquals('New Title', $modelA->title);
     }
 }

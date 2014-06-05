@@ -39,5 +39,11 @@ class TestCase extends PHPUnit_Framework_TestCase
             $table->string('title')->nullable();
             $table->timestamps();
         });
+
+        Capsule::schema()->create('reloadable_model_with_alternative_primary_keys', function ($table) {
+            $table->increments('alternative_id');
+            $table->string('title')->nullable();
+            $table->timestamps();
+        });
     }
 }
