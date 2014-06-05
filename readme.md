@@ -1,3 +1,9 @@
+[![Build Status](https://api.travis-ci.org/rowofpixels/reloadable.svg?branch=master)](https://travis-ci.org/rowofpixels/reloadable)
+&nbsp;
+[![Latest Stable Version](https://poser.pugx.org/rowofpixels/reloadable/version.svg)](https://packagist.org/packages/rowofpixels/reloadable)
+&nbsp;
+[![License](https://poser.pugx.org/rowofpixels/reloadable/license.svg)](https://packagist.org/packages/rowofpixels/reloadable)
+
 # Reloadable
 
 Reloadable is a simple package for allowing [Eloquent](http://laravel.com/docs/eloquent) models to reload themselves, similar to Rails [ActiveRecord#reload](http://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-reload).
