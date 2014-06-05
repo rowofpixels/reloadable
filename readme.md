@@ -11,6 +11,13 @@ Reloadable is a simple package for allowing [Eloquent](http://laravel.com/docs/e
 
 ### Installation
 Install this package through [Composer](https://getcomposer.org/)
+```json
+{
+    "require": {
+        "rowofpixels/reloadable": "0.1.*"
+    }
+}
+```
 
 ### Usage
 Use `Rowofpixels\Reloadable\ReloadableTrait` in an eloquent model.
