@@ -9,6 +9,7 @@ trait ReloadableTrait
         $reloaded = $reloaded->newQuery()->find($this->{$this->primaryKey});
 
         $this->attributes = $reloaded->attributes;
+        $this->original = $reloaded->original;
 
         return $this;
     }

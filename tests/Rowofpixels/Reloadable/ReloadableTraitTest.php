@@ -66,4 +66,16 @@ class ReloadableTraitTest extends TestCase
 
         $this->assertEquals('New Title', $modelA->title);
     }
+
+    public function testReloadableModelReloadIsNotDirty()
+    {
+        $modelA = ReloadableModel::create(array('title' => 'Original Title'));
+        $modelB = ReloadableModel::first();
+        $modelB->title = 'New Title';
+        $modelB->save();
+
+        $modelA->reload();
+
+        $this->assertFalse($modelA->isDirty());
+    }
 }
