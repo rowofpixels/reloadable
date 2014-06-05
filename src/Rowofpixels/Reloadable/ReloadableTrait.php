@@ -6,7 +6,7 @@ trait ReloadableTrait
     public function reload()
     {
         $reloaded = new static;
-        $reloaded = $reloaded->newQuery()->find($this->{$this->primaryKey});
+        $reloaded = $reloaded->find($this->{$this->primaryKey});
 
         $this->attributes = $reloaded->attributes;
         $this->original = $reloaded->original;
