@@ -36,4 +36,14 @@ class ReloadableTraitTest extends TestCase
 
         $this->assertEquals('New Title', $modelA->title);
     }
+
+    public function testReloadableModelReloadIsChainable()
+    {
+        $modelA = ReloadableModel::create(array('title' => 'Original Title'));
+        $modelB = ReloadableModel::first();
+        $modelB->title = 'New Title';
+        $modelB->save();
+
+        $this->assertEquals('New Title', $modelA->reload()->title);
+    }
 }
